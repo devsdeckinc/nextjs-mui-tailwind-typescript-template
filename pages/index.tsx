@@ -8,7 +8,10 @@ export default function Home() {
     <div className={styles.container}>
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+          Welcome to{" "}
+          <a href="https://medium.com/@devsfutureinc/create-a-nextjs-app-mui-typescript-tailwind-4cf939b4abbd">
+            Next.js Template
+          </a>
         </h1>
 
         <p className={styles.description}>
@@ -35,7 +38,7 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by {" "}<strong> {" - "} Devs Deck Tutorial</strong>
+          Powered by <strong> {" - "} Devs Deck Tutorial</strong>
         </a>
       </footer>
     </div>
