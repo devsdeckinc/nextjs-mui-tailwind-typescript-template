@@ -1,46 +1,48 @@
-import Head from "next/head";
-import Image from "next/image";
-import Link from "next/link";
-import styles from "../styles/Home.module.css";
+import * as React from "react";
+import Head from "../src/modules/components/Head";
+import NoSsr from "@mui/material/NoSsr";
+import Divider from "@mui/material/Divider";
+import AppHeader from "../src/layouts/AppHeader";
+import AppFooter from "../src/layouts/AppFooter";
+import BrandingCssVarsProvider from "../src/BrandingCssVarsProvider";
+import NewsletterToast from "../src/components/home/NewsletterToast";
+import AppHeaderBanner from "../src/components/banner/AppHeaderBanner";
 
 export default function Home() {
   return (
-    <div className={styles.container}>
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to{" "}
-          <a href="https://medium.com/@devsfutureinc/create-a-nextjs-app-mui-typescript-tailwind-4cf939b4abbd">
-            Next.js Template
-          </a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{" "}
-          <code className={styles.code}>pages/index.tsx</code>
-        </p>
-
-        <div className={styles.grid}>
-          <Link href={`/hello`} className={styles.card}>
-            <h2>Static Routing &rarr;</h2>
-            <p>Simple Routing, Navigate to Hello Page </p>
-          </Link>
-
-          <Link href={`/users`} className={styles.card}>
-            <h2>Dynamic Routing &rarr;</h2>
-            <p>Routing dynamically, Navigate to Users Page to learn more </p>
-          </Link>
-        </div>
+    <BrandingCssVarsProvider>
+      <Head
+        title="Escamenu"
+        description="MUI provides a simple, customizable, and accessible library of React components. Follow your own design system, or start with Material Design."
+      />
+      <NoSsr>
+        <NewsletterToast />
+      </NoSsr>
+      <AppHeaderBanner />
+      <AppHeader />
+      <main id="main-content">
+        <Divider />
       </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://samraj.fyimad.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by <strong> {" - "} Devs Deck Tutorial</strong>
-        </a>
-      </footer>
-    </div>
+      <script
+        type="application/ld+json"
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{
+          __html: `
+{
+  "@context": "https://schema.org",
+  "@type": "Escamenu",
+  "name": "esca",
+  "url": "https://escamenu.com/",
+  "logo": "https://www.escamenu.com/static/media/escacointoken.deb98e59f191dbb19c71.png",
+  "sameAs": [
+    "https://www.instagram.com/escamenu/",
+    "https://twitter.com/EscaMenu",
+    "https://www.facebook.com/escacontactless"
+  ]
+}
+          `,
+        }}
+      />
+    </BrandingCssVarsProvider>
   );
 }
